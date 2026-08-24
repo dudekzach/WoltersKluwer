@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wolters Kluwer | Corey Follow-Up Call Guide</title>
+<style>
+  :root {
+    --bg: #f4f7fb;
+    --panel: #ffffff;
+    --ink: #172033;
+    --muted: #5e6b82;
+    --line: #dfe5ee;
+    --navy: #17365d;
+    --blue: #245ea8;
+    --blue-soft: #eaf2fb;
+    --green: #207a55;
+    --green-soft: #eaf7f1;
+    --amber: #9a6500;
+    --amber-soft: #fff6df;
+    --red: #a73a3a;
+    --red-soft: #fff0f0;
+    --shadow: 0 8px 24px rgba(25, 49, 82, .08);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.58;
+  }
+  a { color: var(--blue); }
+  .shell {
+    display: grid;
+    grid-template-columns: 285px minmax(0, 1fr);
+    min-height: 100vh;
+  }
+  aside {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 28px 20px;
+    background: #102846;
+    color: white;
+  }
+  aside h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+  }
+  aside p {
+    margin: 0 0 22px;
+    color: #cad7e8;
+    font-size: 13px;
+  }
+  nav a {
+    display: block;
+    color: #e6eef8;
+    text-decoration: none;
+    padding: 8px 10px;
+    margin: 4px 0;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  nav a:hover { background: rgba(255,255,255,.10); }
+  main {
+    width: min(1180px, calc(100vw - 285px));
+    padding: 38px 44px 70px;
+  }
+  .hero {
+    background: linear-gradient(135deg, #17365d, #245ea8);
+    color: white;
+    border-radius: 18px;
+    padding: 34px 36px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    margin: 0 0 8px;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.08;
+  }
+  .hero .sub {
+    font-size: 18px;
+    color: #dfeafa;
+    margin: 0 0 18px;
+  }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .badge {
+    border: 1px solid rgba(255,255,255,.30);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 12px;
+    background: rgba(255,255,255,.09);
+  }
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px 30px;
+    margin: 18px 0;
+    box-shadow: var(--shadow);
+  }
+  h2 {
+    color: var(--navy);
+    margin-top: 0;
+    font-size: 25px;
+    line-height: 1.2;
+  }
+  h3 {
+    color: var(--navy);
+    margin-top: 28px;
+    font-size: 19px;
+  }
+  h4 {
+    margin: 22px 0 8px;
+    color: var(--ink);
+  }
+  .lead {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .callout {
+    border-left: 5px solid var(--blue);
+    background: var(--blue-soft);
+    padding: 16px 18px;
+    border-radius: 10px;
+    margin: 16px 0;
+  }
+  .callout.green { border-left-color: var(--green); background: var(--green-soft); }
+  .callout.amber { border-left-color: var(--amber); background: var(--amber-soft); }
+  .callout.red { border-left-color: var(--red); background: var(--red-soft); }
+  .quote {
+    font-size: 18px;
+    font-weight: 650;
+    color: var(--navy);
+    margin: 12px 0;
+  }
+  ul, ol { padding-left: 24px; }
+  li { margin: 7px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 14px;
+  }
+  th {
+    background: #eef3f9;
+    color: var(--navy);
+    text-align: left;
+    padding: 11px 12px;
+    border: 1px solid var(--line);
+  }
+  td {
+    padding: 11px 12px;
+    border: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .kicker {
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 6px;
+  }
+  .source {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+  .reference-list li {
+    word-break: break-word;
+    margin: 11px 0;
+  }
+  details {
+    background: #fafbfd;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 10px 0;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 12.7px;
+    line-height: 1.52;
+    color: #20293a;
+  }
+  .footer {
+    color: var(--muted);
+    font-size: 12px;
+    padding: 8px 4px 30px;
+  }
+  .action-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 14px;
+  }
+  .action-card {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px;
+    background: #fafbfd;
+  }
+  .action-card strong {
+    display: block;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  @media (max-width: 920px) {
+    .shell { display: block; }
+    aside { position: relative; height: auto; }
+    main { width: 100%; padding: 24px 16px 48px; }
+    .action-grid { grid-template-columns: 1fr; }
+  }
+  @media print {
+    aside { display: none; }
+    .shell { display: block; }
+    main { width: 100%; padding: 0; }
+    body { background: white; }
+    section, .hero { box-shadow: none; break-inside: avoid; }
+    details { break-inside: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside>
+    <h2>Corey Follow-Up Guide</h2>
+    <p>Wolters Kluwer — Genesys Cloud licensing, PCI/PII, STA/WEM/CX3, and AI token governance.</p>
+    <nav>
+      <a href="#action-items">Assigned action items</a>
+      <a href="#executive-conclusion">Executive conclusion</a>
+      <a href="#wk-request">What WK asked us to solve</a>
+      <a href="#corey-discussion">1. Corey: PCI / PII discussion</a>
+      <a href="#sta-cost">2. Cheapest / optimized STA</a>
+      <a href="#token-visibility">3. Tom / Zach: token visibility</a>
+      <a href="#recommendation">Recommendation back to WK</a>
+      <a href="#references">Official references</a>
+      <a href="#transcript">Full transcript appendix</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="hero">
+      <div class="kicker" style="color:#cfe0f8;">Wolters Kluwer · Genesys Cloud</div>
+      <h1>Corey Follow-Up Call Guide</h1>
+      <p class="sub">PCI compliance, PII redaction, Speech &amp; Text Analytics, WEM/CX3 economics, and AI token governance</p>
+      <div class="badge-row">
+        <span class="badge">Transcript is source of truth for WK requirements</span>
+        <span class="badge">Official Genesys documentation used for capability validation</span>
+        <span class="badge">No customer numbers altered</span>
+      </div>
+    </div>
+
+    <section id="action-items">
+      <h2>Assigned action items</h2>
+      <div class="action-grid">
+        <div class="action-card"><strong>1. Corey</strong>Connect with Corey to discuss the PII compliancy issue and ensure they are on the right track.</div>
+        <div class="action-card"><strong>2. PCI / STA optimization</strong>Investigate the most optimized solution for PCI compliance, specifically focusing on the cheapest way to obtain Speech and Text Analytics (STA).</div>
+        <div class="action-card"><strong>3. Tom / Zach</strong>Tom to follow-up with Zach regarding the AI token consumption visibility and potential improvements.</div>
+      </div>
+    </section>
+
+    <section id="executive-conclusion">
+      <h2>Executive conclusion</h2>
+      <p>I reviewed the full Wolters Kluwer licensing Q&amp;A transcript and validated the relevant Genesys Cloud capabilities against current official documentation. The transcript is the source of truth for WK's stated business requirements and priorities.</p>
+
+      <div class="callout red">
+        <p class="lead"><strong>There is an important distinction that changes the recommendation:</strong></p>
+        <p class="lead"><strong>WK does not necessarily need Speech and Text Analytics to achieve PCI DSS compliance.</strong></p>
+      </div>
+
+      <p>Genesys explicitly states that <strong>Automated Sensitive Data Masking/Redaction is not itself PCI DSS compliant</strong>. It is a secondary safety measure. Genesys identifies <strong>Secure Pause and Secure Call Flows</strong> as the features externally validated by a QSA as PCI DSS Level 1 compliant.</p>
+      <p class="source">Source: <a href="https://help.genesys.cloud/?p=133895&utm_source=chatgpt.com">Genesys Cloud Resource Center</a></p>
+
+      <p>That means the lowest-cost path for the requirement Manjeet repeatedly articulated—“make every North America agent PCI compliant”—may be to use the PCI controls WK already has rather than license STA across the remaining population.</p>
+    </section>
+
+    <section id="wk-request">
+      <h2>What WK actually asked us to solve</h2>
+      <p>The transcript establishes these requirements:</p>
+      <ul>
+        <li>Approximately <strong>2,149 North America users</strong> are the target population.</li>
+        <li>Approximately <strong>1,080 already have WEM</strong>, leaving about <strong>1,069 users</strong> to address.</li>
+        <li>PCI is being treated as an enterprise baseline or “insurance policy,” even for businesses that do not take cards today.</li>
+        <li>WK wants the <strong>most optimized solution</strong>, not necessarily STA, WEM, or CX3.</li>
+        <li>If STA is ultimately required, WK wants the <strong>cheapest way of obtaining it</strong>.</li>
+        <li>Cost predictability is important. Leadership strongly dislikes variable overages.</li>
+        <li>AI tokens are attractive because they are fungible across AI capabilities, but WK is concerned about governance, chargeback and unpredictable consumption.</li>
+        <li>WK asked Genesys to model <strong>tokens vs WEM vs CX3</strong>, not simply recommend the WEM SKU.</li>
+        <li>Corey is specifically looking for validation that the proposed compliance architecture is technically correct.</li>
+      </ul>
+
+      <div class="callout amber">
+        <p>There is also a terminology issue worth resolving with Corey. The discussion occasionally says <strong>PII</strong>, but Manjeet consistently frames the immediate requirement as <strong>PCI</strong>. Those are materially different requirements.</p>
+      </div>
+    </section>
+
+    <section id="corey-discussion">
+      <div class="kicker">Action item 1</div>
+      <h2>Corey discussion — PCI/PII compliance</h2>
+
+      <h3>The key thing to validate with Corey</h3>
+      <div class="callout">
+        <p class="quote">“Is WK's mandatory requirement PCI DSS protection of cardholder data, or is there a separate requirement to automatically redact broader PII from every recorded interaction?”</p>
+      </div>
+      <p>That answer changes the architecture.</p>
+
+      <h3>If the requirement is PCI DSS</h3>
+      <p>My recommended order of preference is:</p>
+
+      <h4>1. Secure Call Flow — preferred architectural control for payments</h4>
+      <p>Secure flows prevent the sensitive payment portion from being recorded and prevent the agent from seeing/hearing sensitive data. Genesys specifically describes them as a PCI-compliant approach for payment collection.</p>
+      <p class="source">Source: <a href="https://help.genesys.cloud/articles/secure-flows/?utm_source=chatgpt.com">Genesys Cloud — Secure flows</a></p>
+
+      <p>For an agent-assisted payment scenario:</p>
+      <div class="callout green">
+        <p><strong>Agent → Secure Flow → customer enters card information → PCI-compliant payment data action → return to same agent</strong></p>
+      </div>
+      <p>The card data never needs to become part of the recording/transcript in the first place.</p>
+
+      <h4>2. Secure Pause — lowest-friction option</h4>
+      <p>Secure Pause stops recording while payment information is provided. It is also QSA-validated as PCI DSS Level 1.</p>
+      <p class="source">Source: <a href="https://help.genesys.cloud/?p=126033&utm_source=chatgpt.com">Genesys Cloud Resource Center — Secure Pause</a></p>
+
+      <p>This option became materially more attractive in 2026. As of <strong>March 2, 2026</strong>, Genesys expanded Secure Pause to all voice calls, including non-ACD inbound/outbound calls and DID-based callbacks. The release specifically describes the change as closing a compliance gap.</p>
+      <p class="source">Source: <a href="https://help.genesys.cloud/announcements/secure-pause-available-on-all-call-types/?utm_source=chatgpt.com">Genesys Cloud announcement — Secure Pause available on all call types</a></p>
+
+      <p>For WK's CX2 agents, therefore, Secure Pause does <strong>not require upgrading those users to WEM or purchasing STA just to obtain PCI protection</strong>.</p>
+      <p>The downside is human process: an agent must activate Secure Pause at the appropriate time. For that reason I would favor Secure Call Flow where WK actually processes payments and retain Secure Pause as the fallback.</p>
+
+      <h4>3. STA sensitive-data masking — defense in depth, not the primary PCI mechanism</h4>
+      <p>STA can automatically identify card number, expiry date, CVV/CID and related sensitive entities and mask them in recordings/transcripts. But Genesys describes this as <strong>best effort</strong> and explicitly recommends Secure Pause/Secure Call Flow as the first line of defense.</p>
+      <p class="source">Source: <a href="https://help.genesys.cloud/?p=303478&utm_source=chatgpt.com">Genesys Cloud Resource Center — sensitive data masking</a></p>
+
+      <div class="callout red">
+        <p>Most importantly:</p>
+        <p class="quote">Genesys explicitly says Automated Sensitive Data Masking <strong>is not PCI DSS compliant by itself</strong>.</p>
+      </div>
+      <p class="source">Source: <a href="https://help.genesys.cloud/faqs/is-automated-sensitive-data-masking-and-redaction-pci-dss-compliant/?utm_source=chatgpt.com">Genesys Cloud FAQ — Is automated sensitive data masking and redaction PCI DSS compliant?</a></p>
+
+      <p>That point is important for the WK conversation because it challenges the original premise that “we need transcription/STA to get redaction, therefore we need STA to make everybody PCI compliant.”</p>
+
+      <h3>If WK really needs general PII redaction</h3>
+      <p>Then the conclusion changes.</p>
+      <p>Automatic PII masking—names, email addresses, phone numbers, locations, national IDs, etc.—is an <strong>STA capability</strong>. Current documentation says sensitive data masking and the other conversation-intelligence functions require the STA add-on even though basic transcription itself can now be billed separately.</p>
+      <p class="source">Source: <a href="https://help.genesys.cloud/articles/add-speech-and-text-analytics-upgrade-add-on-to-your-organization/?utm_source=chatgpt.com">Genesys Cloud — Add Speech and Text Analytics upgrade add-on</a></p>
+
+      <p>So I would make <strong>PCI versus PII</strong> the first subject in the Corey discussion.</p>
+    </section>
+
+    <section id="sta-cost">
+      <div class="kicker">Action item 2</div>
+      <h2>Cheapest/most optimized way to obtain STA</h2>
+
+      <p>If WK determines it genuinely needs <strong>STA for all remaining users</strong>, standalone STA via AI Experience is currently cheaper than WEM based both on public pricing and WK's negotiated figures.</p>
+
+      <p>Genesys currently meters named-user STA at <strong>30 AI Experience tokens per user</strong>. The published US token price is $1/token, making the public economics approximately <strong>$30/user/month</strong>.</p>
+      <p class="source">Source: <a href="https://help.genesys.cloud/articles/genesys-cloud-tokens-model/?utm_source=chatgpt.com">Genesys Cloud tokens model</a></p>
+
+      <p>The current public CX2 WEM add-on price is <strong>$40/user/month</strong> for named users.</p>
+      <p class="source">Source: <a href="https://help.genesys.cloud/articles/genesys-cloud-pricing-hub/?utm_source=chatgpt.com">Genesys Cloud pricing hub</a></p>
+
+      <p>WK's transcript gives us better customer-specific economics:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th>WK net monthly/user</th>
+            <th>Incremental 1,069 users</th>
+            <th>Annual incremental</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Secure Pause / PCI architecture</strong></td>
+            <td><strong>$0 incremental STA/WEM license</strong></td>
+            <td>Implementation/process cost only</td>
+            <td>Implementation/process cost only</td>
+          </tr>
+          <tr>
+            <td><strong>Standalone STA / tokens</strong></td>
+            <td>~$25.50</td>
+            <td>~$27,260/mo</td>
+            <td><strong>~$327,114/yr</strong></td>
+          </tr>
+          <tr>
+            <td><strong>CX2 + WEM</strong></td>
+            <td>~$29.60</td>
+            <td>~$31,642/mo</td>
+            <td><strong>~$379,709/yr</strong></td>
+          </tr>
+          <tr>
+            <td>Difference: WEM vs STA</td>
+            <td><strong>+$4.10</strong></td>
+            <td>+$4,383/mo</td>
+            <td><strong>+$52,595/yr</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Those numbers also explain Tom's comment in the meeting about the difference being approximately <strong>$51K annually</strong>. The calculation works when applied to the roughly 1,069-user WEM gap, rather than all 2,149 users.</p>
+
+      <h3>Important 2026 licensing change</h3>
+      <p>There has been a meaningful platform change since some of the assumptions in the meeting.</p>
+      <p>On <strong>April 20, 2026</strong>, Genesys changed STA/WEM add-on licensing to be <strong>permission based</strong> and decoupled transcription usage from STA/WEM license billing.</p>
+      <p class="source">Source: <a href="https://help.genesys.cloud/release-notes/genesys-cloud/april-20-2026/?utm_source=chatgpt.com">Genesys Cloud release notes — April 20, 2026</a></p>
+
+      <p>Current documentation says:</p>
+      <ul>
+        <li>Transcription alone does not automatically trigger an STA/WEM license.</li>
+        <li>Transcription minutes draw against the organization's pooled transcription allocation.</li>
+        <li>STA conversation-intelligence functions such as topic spotting, sentiment, empathy and <strong>sensitive data masking</strong> still require the STA entitlement.</li>
+        <li><code>Billing &gt; User &gt; STA Upgrade</code> can explicitly control which users receive STA.</li>
+        <li>WEM takes precedence when a user already has WEM.</li>
+      </ul>
+      <p class="source">Source: <a href="https://help.genesys.cloud/articles/add-speech-and-text-analytics-upgrade-add-on-to-your-organization/?utm_source=chatgpt.com">Genesys Cloud — Add Speech and Text Analytics upgrade add-on</a></p>
+
+      <p>This actually creates more optimization possibilities than the meeting contemplated.</p>
+
+      <h3>CX3</h3>
+      <p>Current public pricing is:</p>
+      <ul>
+        <li>CX2: <strong>$115 named user/month</strong></li>
+        <li>CX3: <strong>$155 named user/month</strong></li>
+      </ul>
+      <p>So the published CX2→CX3 uplift is $40, identical to the published CX2 WEM add-on price.</p>
+      <p class="source">Source: <a href="https://www.genesys.com/pricing?utm_source=chatgpt.com">Genesys pricing</a></p>
+
+      <p>Therefore <strong>there is no public-list-price reason to move the entire organization to CX3 merely to obtain STA/WEM</strong>. WK's negotiated CX3 discount could alter that, so Tom should still produce the requested commercial model.</p>
+
+      <p>CX3 does have broader fair-use allocations. For example, current named-user allocations show 110,000 API-on-demand calls for CX2 versus 140,000 for CX3. CX2+WEM does, however, combine its voice transcription allocations such that the transcription economics need to be examined separately rather than assuming CX3 automatically provides a large advantage.</p>
+      <p class="source">Source: <a href="https://help.genesys.cloud/articles/genesys-cloud-fair-use-policy/?utm_source=chatgpt.com">Genesys Cloud fair use policy</a></p>
+
+      <h3>Recommended commercial ranking</h3>
+      <div class="callout green">
+        <p><strong>PCI only:</strong> Secure Flow/Secure Pause → no STA purchase merely for PCI.</p>
+        <p><strong>PCI + enterprise-wide automatic PII/PCI masking:</strong> standalone STA for non-WEM users → approximately $52.6K/year cheaper than extending WEM using the transcript's negotiated pricing.</p>
+        <p><strong>PCI + genuine WFM/WEM adoption:</strong> WEM may justify the ~$52.6K premium because WK then receives forecasting/scheduling, workforce management, performance capabilities, etc.</p>
+        <p><strong>CX3:</strong> pursue only if the negotiated enterprise upgrade economics make it comparable/better than maintaining CX2 + mixed WEM/STA, or if the additional CX3 capabilities/fair-use allocations have measurable value.</p>
+      </div>
+    </section>
+
+    <section id="token-visibility">
+      <div class="kicker">Action item 3</div>
+      <h2>Tom/Zach — AI token consumption visibility</h2>
+
+      <p>The concern expressed by Manjeet and Corey was valid: WK doesn't want one business consuming a large token pool without being able to explain the resulting bill or charge it back appropriately.</p>
+
+      <p>The current state is better than the discussion suggests, but not equivalent to a hard budget-control system.</p>
+
+      <p>Genesys' current usage reporting documentation says the <strong>Billable Usage report exposes AI token usage for named users</strong>, organized by charge name, entity/user email or device ID, and timestamp. The Resources Usage report provides daily consumption of billable resources including AI-token-based resources.</p>
+      <p class="source">Source: <a href="https://help.genesys.cloud/144305/">Genesys Cloud usage reporting</a></p>
+
+      <p>So the statement in the transcript that WK can only see a total and cannot see named-user token usage is no longer completely accurate.</p>
+
+      <p>There are limitations:</p>
+      <ul>
+        <li>Usage data is essentially <strong>next-day</strong>, not real-time.</li>
+        <li>Reports can be generated only once every 24 hours.</li>
+        <li>Current public documentation does <strong>not establish a configurable per-user token spending cap</strong>.</li>
+        <li>The newer Usage Query Service provides much better filtering, including user ID/client/platform and pagination, but Genesys explicitly warns that its data represents general platform activity and <strong>must not be treated as billing data</strong>.</li>
+        <li>Genesys is also modernizing/deprecating portions of the older Billing &amp; Usage UI/API infrastructure, so any WK chargeback integration should be designed against the replacement billing architecture rather than hard-coding the legacy interface.</li>
+      </ul>
+      <p class="source">Sources:
+        <a href="https://help.genesys.cloud/announcements/upcoming-release-of-new-usage-query-service-with-expanded-data-access-and-pagination/?utm_source=chatgpt.com">Usage Query Service announcement</a> ·
+        <a href="https://help.genesys.cloud/announcements/deprecation-billing-and-usage-apis-and-user-interface/?utm_source=chatgpt.com">Billing and Usage API/UI deprecation announcement</a>
+      </p>
+
+      <h3>What Tom should specifically ask Zach/Product</h3>
+      <ol>
+        <li>Can WK obtain AI token consumption simultaneously by <strong>AI capability + user + date + business unit/division</strong>?</li>
+        <li>Which of those dimensions are authoritative for <strong>billing/chargeback</strong>, rather than operational usage only?</li>
+        <li>Is there an API equivalent of the named-user AI token information exposed in the Billable Usage report?</li>
+        <li>Can WK configure <strong>budgets, thresholds, notifications or hard caps</strong> before AI token overage occurs?</li>
+        <li>Can a specific capability such as AI Translate, Copilot, Virtual Agent, etc. be permission-restricted independently to prevent unplanned token consumption?</li>
+        <li>What is the target architecture replacing the Billing &amp; Usage UI/API, and what should WK build against for enterprise chargeback?</li>
+      </ol>
+
+      <p>That turns the vague "visibility is improving" discussion into a concrete governance requirement.</p>
+    </section>
+
+    <section id="recommendation">
+      <h2>Recommendation back to WK</h2>
+
+      <div class="callout red">
+        <p class="lead"><strong>I would not recommend that WK approve 1,069 additional WEM or STA licenses yet solely on the basis of PCI compliance.</strong></p>
+      </div>
+
+      <p>The first design review with Corey should validate:</p>
+      <div class="callout green">
+        <p><strong>PCI requirement → Enable PCI DSS organizational setting → Secure Flow for structured payment collection → Secure Pause as appropriate/fallback → STA masking only if WK wants defense-in-depth and/or broader PII redaction.</strong></p>
+      </div>
+
+      <p>Genesys requires customers intending to handle cardholder transactions to have the PCI DSS organization setting enabled, and the customer responsibility matrix should also be included in the design review.</p>
+      <p class="source">Source: <a href="https://help.genesys.cloud/?p=133895&utm_source=chatgpt.com">Genesys Cloud Resource Center</a></p>
+
+      <p>If Corey confirms the real requirement is <strong>automatic PII/PCI redaction across every interaction</strong>, then STA remains relevant and the commercial recommendation becomes <strong>standalone STA for the non-WEM population</strong>, with WEM offered only where WK sees enough WEM business value to justify the additional ~$52.6K/year.</p>
+
+      <p>That is the path I would take into the Corey conversation because it directly answers Manjeet's request: <strong>don't start with a SKU; start with the compliance requirement and find the least expensive architecture that satisfies it.</strong></p>
+    </section>
+
+    <section id="references">
+      <h2>Official Genesys references used in the analysis</h2>
+      <p>The uploaded Genesys Cloud Knowledge Resource Map identifies the Resource Center, Developer Center, release notes, Features Coming Soon, Knowledge Network, community, and other Genesys Cloud resources as source locations. The capability validation above used official Genesys documentation.</p>
+      <ul class="reference-list">
+        <li><a href="https://help.genesys.cloud/?p=133895&utm_source=chatgpt.com">PCI DSS / Genesys Cloud Resource Center reference</a></li>
+        <li><a href="https://help.genesys.cloud/articles/secure-flows/?utm_source=chatgpt.com">Secure flows</a></li>
+        <li><a href="https://help.genesys.cloud/?p=126033&utm_source=chatgpt.com">Secure Pause</a></li>
+        <li><a href="https://help.genesys.cloud/announcements/secure-pause-available-on-all-call-types/?utm_source=chatgpt.com">Secure Pause available on all call types</a></li>
+        <li><a href="https://help.genesys.cloud/?p=303478&utm_source=chatgpt.com">Sensitive data masking</a></li>
+        <li><a href="https://help.genesys.cloud/faqs/is-automated-sensitive-data-masking-and-redaction-pci-dss-compliant/?utm_source=chatgpt.com">Is automated sensitive data masking and redaction PCI DSS compliant?</a></li>
+        <li><a href="https://help.genesys.cloud/articles/add-speech-and-text-analytics-upgrade-add-on-to-your-organization/?utm_source=chatgpt.com">Add Speech and Text Analytics upgrade add-on</a></li>
+        <li><a href="https://help.genesys.cloud/articles/genesys-cloud-tokens-model/?utm_source=chatgpt.com">Genesys Cloud tokens model</a></li>
+        <li><a href="https://help.genesys.cloud/articles/genesys-cloud-pricing-hub/?utm_source=chatgpt.com">Genesys Cloud pricing hub</a></li>
+        <li><a href="https://help.genesys.cloud/release-notes/genesys-cloud/april-20-2026/?utm_source=chatgpt.com">Genesys Cloud release notes — April 20, 2026</a></li>
+        <li><a href="https://www.genesys.com/pricing?utm_source=chatgpt.com">Genesys pricing</a></li>
+        <li><a href="https://help.genesys.cloud/articles/genesys-cloud-fair-use-policy/?utm_source=chatgpt.com">Genesys Cloud fair use policy</a></li>
+        <li><a href="https://help.genesys.cloud/144305/">Genesys Cloud usage reporting</a></li>
+        <li><a href="https://help.genesys.cloud/announcements/upcoming-release-of-new-usage-query-service-with-expanded-data-access-and-pagination/?utm_source=chatgpt.com">Usage Query Service announcement</a></li>
+        <li><a href="https://help.genesys.cloud/announcements/deprecation-billing-and-usage-apis-and-user-interface/?utm_source=chatgpt.com">Billing and Usage APIs and UI deprecation</a></li>
+      </ul>
+
+      <details>
+        <summary>Genesys Cloud Knowledge Resource Map referenced in the uploaded materials</summary>
+        <p><strong>API &amp; Developer Tools</strong></p>
+        <ul>
+          <li>Developer Portal: https://www.genesys.com/developer</li>
+          <li>Developer Center: https://developer.genesys.cloud/</li>
+          <li>API Explorer: https://developer.genesys.cloud/devapps/api-explorer</li>
+          <li>Developer Tools: https://developer.genesys.cloud/devapps/</li>
+          <li>Developer Guides: https://developer.genesys.cloud/guides/</li>
+          <li>Developer Blueprints: https://developer.genesys.cloud/blueprints/</li>
+          <li>AppFoundry Docs: https://developer.genesys.cloud/appfoundry/</li>
+        </ul>
+        <p><strong>Community &amp; Ecosystem</strong></p>
+        <ul>
+          <li>Developer Forum: https://developer.genesys.cloud/forum/</li>
+          <li>Community Portal: https://community.genesys.com/home</li>
+          <li>Events Page: https://www.genesys.com/events</li>
+          <li>YouTube Channel: https://www.youtube.com/channel/UC6OlhOuWZBJw0e_lRBYMCsw</li>
+        </ul>
+        <p><strong>Tutorials, Videos &amp; Blogs</strong></p>
+        <ul>
+          <li>Developer Videos: https://developer.genesys.cloud/video/</li>
+          <li>Developer Blog: https://developer.genesys.cloud/blog/</li>
+        </ul>
+        <p><strong>Platform Documentation &amp; Support</strong></p>
+        <ul>
+          <li>Genesys Cloud Resource Center: https://help.mypurecloud.com/</li>
+          <li>Shared Resource Center: https://all.docs.genesys.com/GenesysCloud</li>
+          <li>Knowledge Network: https://know.genesys.com/home?product=genesys-cloud-cx</li>
+          <li>Features Coming Soon: https://help.mypurecloud.com/release-notes-home/features-coming-soon/</li>
+          <li>Release Notes: https://help.mypurecloud.com/release-notes-home/release-notes/</li>
+        </ul>
+        <p><strong>Strategic &amp; Marketing Resources</strong></p>
+        <ul>
+          <li>Genesys Resource Site: https://www.genesys.com/resources</li>
+          <li>Customer Stories: https://www.genesys.com/customer-stories</li>
+        </ul>
+        <p><strong>Legacy Reference</strong></p>
+        <ul>
+          <li>PureConnect Technical Reference: https://help.genesys.com/pureconnect/desktop/products_a_z.htm</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="transcript">
+      <h2>Appendix — Full source-of-truth transcript</h2>
+      <p>This appendix preserves the complete transcript supplied for the Wolters Kluwer North America Genesys Cloud licensing Q&amp;A so the detailed call context remains available while using this guide.</p>
+      <details open>
+        <summary>WK NA Genesys Cloud Licensing Q&amp;A — complete transcript</summary>
+        <pre>WK NA Genesys Cloud Licensing Q&amp;A
+
+Corey Blosser[0:0]
+ Getting caught. Yeah, that&#x27;s kind of the trick, right? It&#x27;s like the world doesn&#x27;t stop when you step away. Yeah. Yeah. But I heard you.
+Tom Nowinski[0:8]
+ Someone said you&#x27;re fishing. We we were we were up in northern Wisconsin on a big crawling stone lake. And the weather really wasn&#x27;t ideal for fishing at this time of year. It was just like, you know, beautiful 85 degrees, not that much wind. So it was mostly boating, swimming, eating too much food. And some of the supper clubs that we have up in northern Wisconsin, but it was time spent with the daughters before they had to college.
+Corey Blosser[0:41]
+ So that&#x27;s cool. Yeah, we I hear about ice fishing occasionally because we have, you know, we have St. Cloud, Minnesota, that&#x27;s one of the sites and, and during the winter, wintertime, one of the individuals I work with, she&#x27;s their work, one of their workforce management analysts, I guess you&#x27;d say, does ice fishing with her husband and family. And it sounds like a trip, right? It&#x27;s like, when, when I hear, Oh, it&#x27;s like, yeah, we just go drive on the ice, right? It&#x27;s like, I&#x27;ll drive out in the middle of the lake, it just seems kind of a little counterintuitive and a little scary in my mind. But obviously natural for them.
+Tom Nowinski[1:21]
+ You would love it. You know, And, and to your point, it&#x27;s, kind of crazy Some of the things that we do in our part of the world, you know, for recreation, but when you go out there, it is so peaceful, it is so serene. Can it be cold? Yeah, it can be cold. But it&#x27;s really not as, you know, drastic as a lot of people think, because you&#x27;re so active, that keeps you warm.
+Corey Blosser[1:48]
+ Yeah. Hey, Manji. Hey, Tom, did we, did we want to wait for Zach? I mean, I don&#x27;t mind if, I mean, I don&#x27;t know if it&#x27;ll involve him. It&#x27;s really about licensing is most of the conversation.
+Tom Nowinski[2:8]
+ No, we can roll. Sorry. I think I had Zach as optional. And we, okay, we can dive right into recording.
+Corey Blosser[2:18]
+ Yeah, okay, no problem. So the first thing, the first thing on mind is, we&#x27;re taking a different direction regarding those tokens about getting people licensed. And I&#x27;ll give you a little bit of background.
+Manjeet Singh[2:32]
+ So let&#x27;s, let&#x27;s start taking it direction. Let&#x27;s say we are trying to understand the situation a little better. Yeah, what&#x27;s the most optimized solution? Right?
+Corey Blosser[2:44]
+ Yeah, okay. That makes sense. So we&#x27;re in this position, where we discovered that it appears that the, the license, or I&#x27;m sorry, the cost associated with the tokens that we&#x27;re considering purchase, purchasing is only a few dollars, maybe a couple dollars off of a WIM license for the same individuals. And that kind of throws a wrench into well, to Manji&#x27;s point, it&#x27;s, it&#x27;s like, well, then does it make sense to even do the tokens, right? If, if we can get the additional spend out of the business, it&#x27;s like, why would you not go with WIM? That makes sense.
+Tom Nowinski[3:30]
+ I&#x27;m just reaching for my, my resource center cheat sheet, speech and text analytics named, so it&#x27;s 30 tokens per month. Right now we have, I think, you know, 15 ,000 tokens. Yeah.
+Corey Blosser[3:47]
+ And if I remember, yeah, if I remember correctly, I think our discounted price was around 27.
+Tom Nowinski[3:55]
+ On WIM?
+Corey Blosser[3:56]
+ And no, I&#x27;m sorry, on the tokens. When you said 30, I was thinking, I think I want to say that it&#x27;s 30 tokens.
+Manjeet Singh[4:3]
+ And the you&#x27;re like a 15 % discount.
+Corey Blosser[4:6]
+ Yeah, there was some yeah, on that. Yeah. Yeah.
+Tom Nowinski[4:12]
+ So let&#x27;s see 3025 50. And right now, I&#x27;m just looking at your subscription, guys. It&#x27;s, you know, we have Genesys Cloud to the WIM add on Corey, the quantity of 1080. And that is discounted by 26%. In that skew category, which takes me to a net price of 2960. Okay. So basically, you&#x27;re, I think, you know, I&#x27;m sorry, I&#x27;ll just finish this up. Yeah, I think you&#x27;re hearing
+Tom Nowinski[4:59]
+ 2960 net for a lot of capability versus 2550 on the AI token, correct?
+Corey Blosser[5:8]
+ Yes.
+Tom Nowinski[5:9]
+ Yeah, per user.
+Corey Blosser[5:14]
+ So we wanted to confirm that, I guess, just to ensure that we are, you know, we obviously had a conversation with Lewis internally, and that&#x27;s what we were told. So, but we wanted to hear it from the horse&#x27;s mouth just to ensure that you understood where we&#x27;re coming from.
+Tom Nowinski[5:29]
+ We&#x27;re seeing it the same way.
+Corey Blosser[5:31]
+ Yeah.
+Tom Nowinski[5:31]
+ Okay.
+Corey Blosser[5:34]
+ So with that being said, we have been given a directive to, so let me give, let me, quick background. Why are we doing the AI tokens? I think you&#x27;re aware that it&#x27;s speech and text analytics, but the question may be to what end? Why? And I feel like maybe it was touched on briefly. I don&#x27;t know if we really had a conversation about it, but the reason behind it was Pci compliance. We did.
+Tom Nowinski[6:4]
+ Yeah.
+Corey Blosser[6:4]
+ Okay. So the fact that we need that transcription, aka speech and text analytics, to get the redaction, the automatic redaction. Okay. So because it is, since the underlying premise is we&#x27;re trying to make our agents compliant, we&#x27;ve been given a direction of it should be all agents regardless, right? Kind of an insurance policy. Because if anything, our team does not manage the kind of content that the business uses. Six months from now, maybe all of a sudden they decide to take credit card payments. We don&#x27;t know that, but to ensure that we are always in compliance, the thought is they should have the license regardless. Does that make sense?
+Tom Nowinski[6:50]
+ It does for all agents. Let me just expand on that, Corey. So you&#x27;re really saying for all lines of business here in North America, right?
+Corey Blosser[7:0]
+ Yeah. Oh, yes. I&#x27;m sorry. Yes. North America is. Okay. Yeah. Okay. So the thought is, well, if we&#x27;re going to spend this money and we can just add a few dollars, we get a lot more functionality that may or may not be used, but there&#x27;s some benefit there. Then the sort of next step is what I&#x27;m thinking is if we do license everybody, we are now in a situation where everyone&#x27;s CX2 and everyone is WIM, which is effectively CX3. Then the question becomes, is there any optimization that could be gained by just moving the org to CX3? A hundred percent.
+Tom Nowinski[7:49]
+ I can do some modeling on there for you. Okay.
+Corey Blosser[7:54]
+ And so, yeah, if you can help us with that, I&#x27;d really appreciate it. Now, maybe something for our renewal period, right? The last thing is maybe it&#x27;s just a breakdown in communications and shame on me for not knowing more and maybe calling it out. But then the question is, how do we get into the situation where potentially we&#x27;re missing an opportunity over just a few dollars per person? I don&#x27;t know how to phrase it other than, we try to be collaborative. I try to give you information, you try to give me information, and we try to work together to find the best path, right? But then it&#x27;s like, not to say that there needs to be an individual responsible, but I guess maybe my thought would be if Genesys happened to know that, hey, well, if you&#x27;re willing, I know why you&#x27;re wanting these licenses. If you&#x27;re willing, why don&#x27;t you just pay a couple extra dollars and just think of all the extra opportunity you have. I feel like there&#x27;s an expectation on our side that that conversation should have occurred.
+Tom Nowinski[9:4]
+ No, and I&#x27;ll take responsibility for that, guys, because you&#x27;re taking me back much earlier this year, Corey, when we were looking at potential subscription really related to Emea. But to your point, correctly or incorrectly, I&#x27;ve always been under the assumption that with the Wem licensing, that the Wem licensing, certainly in Emea, not a factor. And then when we kind of piecemeal what&#x27;s included in Wem, it&#x27;s the workforce management, it&#x27;s the speech and text analytics, there&#x27;s learning, there&#x27;s some gamification in there. It was always my understanding that the Wem licensing really would never grow to meet
+Tom Nowinski[9:57]
+ 2 ,149, you know, which is your total on The Genesys Cloud Ii licensing.
+Corey Blosser[10:5]
+ Yeah, and I&#x27;m in a similar boat, I understand, because obviously this whole speech and text analytics thing, our approach was, we already have several teams that are already using WIM. So they&#x27;re essentially accounted for. So what we&#x27;re trying to do is fill the gap. And the thought was, well, speech and text analytics, let&#x27;s just do tokens, because in theory, and this is where sort of I faltered a little bit, because in my mind, for whatever reason, I think I was thinking in terms of Emea about the pricing. It&#x27;s like, I thought the WIM license was a much larger uplift. And the thought is, well, you know, instead of spending an extra 10, $20 per individual, let&#x27;s just go with the speech and text analytics. It&#x27;s more cost effective and they get what they need. So my fault for not knowing what that true price difference was. But yeah, the hope is that we don&#x27;t run into a situation like that in the future, where it&#x27;s like, oh, you&#x27;re just missing an opportunity.
+Tom Nowinski[11:6]
+ Yeah, no, I&#x27;ll own that, guys. You know, and Manjeet, to Corey&#x27;s point, responsibility really resides with me. And when all of this was coming together with speech and text analytics, you know, and Corey, I think it may have been in one of our Thursday calls back in June or perhaps early July, you shared with us, you know, that, you know, due to the Pii masking, you know, that the quick solution was just simply to enable speech and text analytics. And so we&#x27;ve been watching your AI token consumption go from practically zero to 100 miles per hour, you know, or almost, you know, 12 ,000, 13 ,000 tokens per month. And I&#x27;ll pause after this ramble, you know, the Delta, you know, if we took the price point of your discounted Ai token rate versus your discounted Wem rate, you know, it&#x27;s $51 ,000 or thereabouts, if my quick math is working, I&#x27;ll just call it, you know, it&#x27;s a bit of an oversight on my part where I didn&#x27;t really, you know, bring it to the surface to let you know, hey, there&#x27;s, you know, some additional functionality on Wem, if you&#x27;re willing to pay just a little bit more annually, because I was always working under the notion that, you know, with the Wem capability, I know that we have some power users and we have some users that just don&#x27;t use it, so.
+Corey Blosser[12:36]
+ Yeah, yeah, and I totally understand where you&#x27;re coming from, because from my perspective, us assigning the Wem, I guarantee you there will be teams that don&#x27;t use it, or at least unless they get some directive from other direction, right? So it&#x27;s like, yeah, I get it.
+Manjeet Singh[12:52]
+ I think - No, we&#x27;re not necessarily, we&#x27;re not necessarily looking for an Sta or a Wem, we are just looking for an optimized solution. As a baseline, we want every agent to be Pci compliant. So what I&#x27;m really looking for is, what&#x27;s the most optimized solution? Because even if it&#x27;s like paying that 29 or 24 or $25 per user, that&#x27;s still a 25 % uplift cost as far as the business is concerned per user per month, right? So I&#x27;m looking for what&#x27;s the most optimized solution from the Pci compliance perspective. If there is something other than the Sta or the Wem, I would like to know, like you have experts on your team, they can definitely figure this out. And if there is a better solution, then we would like to explore that. If not, then we would obviously like to delve into Sta or the Wem licenses, see which one is more optimized. And now considering, even if we have to go with Wem, we currently have how many licenses, Corey?
+Corey Blosser[14:13]
+ We have about 1 ,000, 1 ,100?
+Manjeet Singh[14:16]
+ Yeah, so 1 ,100. That means we need to add another 1 ,100 licenses. That&#x27;s again, a 100 % increase in the number of licenses that we would require. So we wanna know like, what&#x27;s the most optimized solution? What is it going to cost us? Because this cost eventually has to be paid by business. And it&#x27;s hard for us to take it back to them and tell them, hey, somehow this got left out and can you start paying $30 more every month starting now? Cause we want you to be compliant. So we are in a kind of a difficult situation, but we&#x27;re trying to look for a solution.
+Manjeet Singh[14:56]
+ But I don&#x27;t want to look for that solution just within the WK side. I want to engage Genesys and I want to really utilize your expertise on it. Yeah.
+Tom Nowinski[15:7]
+ Noted Manjeet. And Corey, if you have time this afternoon, I know that Zack, you know, could not join our conversation, but I have a call with him at 1230 Central today, I can ask him to reach directly out to you if you have 15 or 20 minutes just to get a, a high level read that, you know, we are going down the right track, you know, because I know that he&#x27;s aware of the Pii, you know, a compliancy issue and let me pull on his, you know, you know, solutioning expertise and just, you know, validate to Manjeet&#x27;s point.
+Corey Blosser[15:45]
+ Yeah. Yeah. That makes sense. I don&#x27;t have anything upcoming scheduled until 130 Central. So, so I am available. And then, yeah, I guess my thought would be from a comparison perspective, the baseline is all users, right? So our 2149 users in North America, they, the thought is we have, what would it be for tokens? What would it be if it was all WIM? And then what would it be if it was CX3 from a, from a net, you know, cost perspective, right?
+Manjeet Singh[16:22]
+ Cause we need to take that back to business. And that&#x27;s, that&#x27;s the most tricky part with this whole equation.
+Tom Nowinski[16:28]
+ Yeah.
+Corey Blosser[16:29]
+ Yeah.
+Tom Nowinski[16:30]
+ What, what&#x27;s really appealing about this guys, you know, with, with the CX3, you know, you know, clearly, you know, from a, from an IT standpoint, from a design standpoint, you know, Genesys cloud three compared to Genesys cloud two, you know, it, it&#x27;s our more, it&#x27;s our most inclusive bundle, but with here, here&#x27;s the caveat, right? And I&#x27;m, I&#x27;m, this is top of mind, Manjeet, and I&#x27;ll have to go back and just make certain that my, my guidance is 100 % correct, but I&#x27;m 98 % correct. When you have a, a Genesys cloud two license and you add the WIM license in effect via the a la carte mode, you just simply have the same capabilities as a Genesys cloud two, or excuse me, Genesys cloud three license. What you might gain is, you know, some increased fair use allocations, Corey.
+Corey Blosser[17:21]
+ Oh, yeah. I think you&#x27;re right. Yeah.
+Tom Nowinski[17:23]
+ Yeah. It, you know, again, which is good news, but since I&#x27;ve been working with, with you for about 15 months now, I don&#x27;t think, you know, we&#x27;ve ever even come close to exceeding the fair use allocations But I&#x27;ll have Phil look at that.
+Corey Blosser[17:42]
+ Yeah. So, and when it comes to that, here&#x27;s, here&#x27;s what I&#x27;m thinking. Um, I, I think it just, obviously AI tokens are different, but, um, it, it gives us greater flexibility to do things like, uh, so Manjeet, you may already know this, but for example, historically, and this is like prior to Genesys cloud, we only retained six months worth of recordings and there was generally back in the day, it was all due to storage. Cause we had to store that locally and we were in the terabytes of storage. Um, but with this fair usage to, to, to, um, uh, Tom&#x27;s point, we don&#x27;t have that same, uh, uh, that same, uh, limitation. I mean, we, we do have a limit, but like Tom said, we&#x27;re not even close to exceeding it. So with that being said, um, we could say, Hey, you know, along with this, you get an additional six months or, you know, we&#x27;re going to record your calls for the, for the next 18 months. That may be useful for some teams, um, as well as for example, Api calls. So as we do more integrations with the APIs, there is a cost associated for all the transactions with the Api. Again, we&#x27;re not, we&#x27;re not, uh, close to an overage, but the point is if we have a larger pool, that just gives more opportunity for integrations. If there&#x27;s more teams that want to leverage the APIs and so on. So, so with the Cx, with the CX three, aside from the whim, there could be some additional sort of behind the scenes benefits that offer opportunity.
+Tom Nowinski[19:20]
+ There, there might be Corey and you&#x27;re probably going to strangle me. But as I listened to you frame that out, you know, the other side of the coin, uh, when you compare contrast, when to the Ai token model, you know, having tokens within your subscription. Um, you, you were taking me back to, you know, like Tamika using AI tokens, you know, for automated Ai scoring. It, it really. There&#x27;s, it begs the question for some consideration with the functionality that is bundled into the, the web license, or it&#x27;s.
+Tom Nowinski[19:55]
+ Or a Genesys Cloud 3 license, call it Wham, right? Same thing. Versus what the Ai token model opens up for you.
+Corey Blosser[20:5]
+ You know, again - Is your general idea saying, well, okay, we could get this extra functionality through, say, CX2 to CX3, or maybe adding on the Wham, but if you did it through AI tokens, AI tokens are more generic. And it&#x27;s like, if there is a team that doesn&#x27;t use forecasting and scheduling, they could use them for bots, or they could use them for co -pilot. Is that kind of your point?
+Tom Nowinski[20:36]
+ A hundred percent.
+Corey Blosser[20:37]
+ Yeah.
+Tom Nowinski[20:38]
+ A hundred percent, and that&#x27;s - So - I&#x27;ll pause after this one. Just like, you know, I think you may be doing, you know, some digital automation with the Salesforce channel right now, you know, but $1, or, you know, an AI token, you know, opens up all this more, how do I say it? This is really up - This is where the marketplace is going, right? Speech and text, virtual agent, Ava. The Ai token model, unless you really have power users with workforce management and speech and text analytics, I would say most of our client base is going to the Ai token route a la carte, unless you just simply have a boatload or a very high demand of workforce management.
+Corey Blosser[21:32]
+ Yeah. Yeah. I mean, I hear where you&#x27;re going. Does that make sense, Manjeet? I&#x27;m not saying we have to dig deep into that, but do you understand the concept?
+Manjeet Singh[21:41]
+ No, I&#x27;m sorry. I was actually trying to read through something else.
+Corey Blosser[21:47]
+ Sorry, can we come back to that again? I&#x27;m looking at the screen.
+Manjeet Singh[21:51]
+ I&#x27;m looking at the screen. I&#x27;m seeing that for CX2, you have speech and text analytics already into it. Is that the case?
+Corey Blosser[22:9]
+ No, I think this is tokens. This is tokens.
+Tom Nowinski[22:13]
+ Oh, this is tokens.
+Manjeet Singh[22:14]
+ I&#x27;m sorry.
+Corey Blosser[22:15]
+ So the point is, so say we upgraded everybody to CX3, so everybody had the WIM license. The WIM license is the WIM license. It&#x27;s specific to WIM license, but you can also get the functionality through token -based purchasing, but the tokens are more generic. They&#x27;re not specific to WIM or speech and text analytics. They&#x27;re not specific to bots. They&#x27;re for the free form. So the idea is if I was a business and you said you&#x27;re going to spend an extra, however much per month to get WIM, so you then have speech and text analytics and you get these extra functions, but someone says, well, but I don&#x27;t really do forecast. I&#x27;ll never do forecasting and scheduling. You just say, I need the speech and text analytics, but I&#x27;m paying that little extra bit because of all the other features that come along with it, that I&#x27;m not going to use. If that was switched to a token model, then you could essentially say, you are going to pay for these tokens. These tokens will allow you to get your speech and text analytics, but if there is an open pool of tokens, if you want to do bots, you can do bots. If you want to do virtual agents, you can do virtual agents. You want to do copilot, you can do copilot because the tokens are generic. Whereas if you just buy the WIM, that&#x27;s all you get, just whatever comes along with WIM. So correct me if I&#x27;m wrong, I think on paper, you would probably find that you, I&#x27;m sorry, go ahead.
+Manjeet Singh[24:0]
+ In other words, you&#x27;re saying that we are committing to, let&#x27;s say in the existing arrangement that we were talking about, we were buying like 15 ,000 tokens. But when we looked at our consumption pattern, we were only consuming about 11 ,000. So in other words, you&#x27;re saying the remaining 4 ,000 could have been used for some of the other services, everybody.
+Corey Blosser[24:27]
+ Yeah, so that gap with the tokens, if the Fcc wanted to, they could use a scoring or agent copilot, or they could use a translator or any of those features that tokens cover. Yeah. Now, with that being said, there&#x27;s this assumption. Now, the assumption is the average that we&#x27;ve been seeing, this 11 ,000, is not expected to change dramatically, right? So they&#x27;re always gonna have a buffer of say 3 ,000. And if they use it,
+Corey Blosser[24:54]
+ Use that buffer for co -pilot, great, they get a lot of additional features there. But if all of a sudden that usage of the baseline changes, well, then they&#x27;re gonna pay for whatever overage over that 15 ,000, right? But the assumption is if that 11 ,000 doesn&#x27;t change, then they&#x27;re just wasting money on tokens, which could be beneficial to them through other features within Genesys Cloud. If we had just given them the WIM license, that WIM license can&#x27;t be used for co -pilot or scoring or Ai, whatever. That&#x27;s the idea. But I feel like, and here&#x27;s kind of where I&#x27;m coming from. I don&#x27;t know if this is the time to discuss it because I feel like we may go a little out of scope and in the moment, we just wanna make sure that we have the compliance taken care of, right? So then my question becomes, if the ultimate goal is we just need to get some compliance in place, how are we gonna do that, tokens or otherwise? And if the general more beneficial way is spend a couple extra bucks, give them the WIM, they&#x27;ll get some extra features. And then perhaps the conversation is, is there a better way even still? That&#x27;s kind of where my mind comes from. Because I don&#x27;t know, Manjeet, you&#x27;re feeling on how much time we should spend on trying to slice and dice and figure it out. I kind of feel like we have our, how much is it to get Pci versus tokens?
+Corey Blosser[26:36]
+ How much to get PCI versus WIM? How much to get Pci versus CX3 is the core focus. But there is this larger conversation to say, maybe there is some additional conversation we should have to say, well, maybe CX3 is not, some of the stuff that we get out of CX3, maybe we really, since not everybody&#x27;s using those features at any given time, maybe tokens is the better way to go because it potentially gives us a little bit of buffer to explore other AI things. I don&#x27;t really have an answer to that.
+Manjeet Singh[27:11]
+ Help me understand. What about, this is not the license type, right? Genesys Cloud CX2 Digital, what does that include? Does that include speech and text?
+Tom Nowinski[27:25]
+ CX Cloud 2 Digital would be for digital channels of communication. So, again, the digital channel is just simply, or the digital add -on is to add a digital channel. And so the digital channel, Genesys Cloud 1 is voice only. I can go back up here.
+Corey Blosser[27:52]
+ Yeah, I think that helps.
+Tom Nowinski[27:54]
+ So here, can you see this, Minji? Yeah, so to answer your question, you know, the core like Genesys Cloud licensing, voice only, voice and digital being orchestrated, voice digital and WIM, and I&#x27;m going to go to the WIM call out, and then Genesys Cloud 4, which is, you know, our most comprehensive bundle. And candidly, I think only like 5 % of like 8 ,000 clients are using that today. That&#x27;s a longer term journey. But where was that WIM call out, Corey? I wanted to show, Minji. So I&#x27;m going to just, you know, pull on the thread that Corey&#x27;s doing a really nice job of calling out, Minji. And so, you know, when you look at the WIM add -on for Genesys Cloud 2, nine times out of 10, our solution consulting team, you know, or salespeople, you know, if there&#x27;s a very strong or consistent use case for workforce management for a subsection of users, then it makes sense to go with the WIM add -on with Genesys Cloud 2. But what we&#x27;re seeing in the marketplace is a lot of companies, you know, are, you know, getting into more AI -driven capabilities, like Copilot, like Ai Scoring, like the Speech and Text Analytics. And the fact that you can, you know, design and configure these tokens for all of these capabilities versus Genesys Cloud versus, you know, the WIM add -on.
+Tom Nowinski[29:36]
+ There is a strong case for the AI tokens.
+Manjeet Singh[29:40]
+ Oh, certainly there are, but here are current challenges. One, until we had applied these tokens for the 517 people for the WIM add -on,
+Manjeet Singh[29:54]
+ For Fcc, our average monthly token consumption was close to like 200. And right now it&#x27;s about 300 or 400, that too because we have assigned seven licenses for a project in Spain. So that&#x27;s our current average usage, 300. I mean, let&#x27;s call it less than 500. Two, if we start utilizing these tokens, and eventually they have to be used once people start adopting it, but you don&#x27;t really have any control on it, Corey, do you? If there&#x27;s some business who assign some licenses to the users, is there a limit on the maximum number of tokens that a person can consume?
+Corey Blosser[30:48]
+ So that&#x27;s a good question. So from a starting perspective - 1 ,000 tokens alone. Yeah, so I think to your point, we have a little bit of control from the initial assignment of the license, but then the question becomes, once you assign that license, could someone start hitting the translate button for every, you know, go through every recording and hit the translate button and then, or use CoPilot multiple times, Supervisor CoPilot, and then ring up a hefty bill? That is a possibility, right? That is, and then we pay for overage. One of the challenges behind that is knowing who, which I know billing on the Genesys side is supposedly improving their APIs and so on, but the challenge is, do I know that Corey clicked that button 1 ,000 times and caused us a $5 ,000 bill, or is it just sort of, we don&#x27;t know? I think that the approach in the past has been, internally, the chargeback model was, we just, we sort of divvy it up. We have a general, you know, they have a general feel of who&#x27;s taken the big port, the biggest portion of The Genesys Cloud Pi, and if tax and accounting takes 20 % and someone racks up a big bill, well, then they get 20 % of that. It may not be fair, but I think historically that&#x27;s how it&#x27;s worked. But yeah, so you are correct, Manjit. There&#x27;s no, I can&#x27;t prevent you from clicking that button 1 ,000 times.
+Manjeet Singh[32:20]
+ And monitor it like on a monthly basis.
+Corey Blosser[32:24]
+ I mean, yeah.
+Manjeet Singh[32:27]
+ How are you going to charge it back to business?
+Corey Blosser[32:28]
+ We see the total, but it&#x27;s not broken down by individual, to my knowledge.
+Manjeet Singh[32:33]
+ Right, so like one month, let&#x27;s say you have five divisions and your total consumption was 1 ,000 tokens. So you distribute like 200 per each, but next month you get 5 ,000 tokens. The business is going to come back and say like, what&#x27;s happening? Why are we getting these huge spikes with the bills?
+Tom Nowinski[32:55]
+ To your point, Corey, I just wanted to share this because you&#x27;re taking me back to another client&#x27;s request earlier this week. And I went back to Scott Thomas, you know, in platform product management and there will be improved visibility, you know, via the Api, you know, that you had mentioned, you know, at a platform level, you know, so you can see, you know, the ask was, you know, hey, can we see with a virtual agent use case? You know, so think of a WK use case, you know, that is consuming tokens within a virtual agent, or, you know, in your case, you know, speech and text analytics. Target date is March of next year, which again, seems like forever, but it&#x27;s the lack of granularity on the Ai token consumption. It&#x27;s a known issue. Genesys Cloud product platform management is looking at something for the first Q1 of next year.
+Corey Blosser[33:56]
+ And that&#x27;s where I was coming from, Manjeet, in the sense that there&#x27;s probably, I think there&#x27;s a relevant conversation to be had around the tokens. But I feel like it&#x27;s a much bigger conversation because of just like things you just mentioned, that I don&#x27;t know if we could really solve that today. So then it goes back to -
+Manjeet Singh[34:14]
+ Yeah, there&#x27;s like, there&#x27;s too much unknown to be able to make a decision. And Tom, this whole thing came up on a conversation earlier today when we were talking to Nicole. We went to her for getting some approvals and she started asking these questions. And it&#x27;s during that conversation that we realized, oh, what we&#x27;re paying for Sta is same as, or let&#x27;s say very close to, very similar to what we could have paid for a Wem license. So then it totally made sense to us. So then she said, yep, go with Wem.
+Manjeet Singh[34:53]
+ But I&#x27;m not just simply taking that. Like I said earlier, we&#x27;ve come to you. I want you to talk with your team, use your expertise. We want to find the most optimized solutions to target Pci. Pci is our current challenge at the moment. And I suppose for Pci, you need speech and text analytics. So tell us what is the cheapest way to get STA for somebody? Got it.
+Tom Nowinski[35:27]
+ I will follow into your point.
+Manjeet Singh[35:30]
+ Yeah, and it&#x27;s not that businesses is asking for it. No, it&#x27;s like now we have to shed some extra money out of our pocket just for being compliant and not necessarily because the customer is going to use it. So it&#x27;s, you understand what I&#x27;m saying, right? Now we just have to pay that extra money to make sure everybody&#x27;s compliant. So what&#x27;s the most optimized way to do it?
+Tom Nowinski[35:59]
+ I do. I do. And I have that captured in my notes, Manjeet. And I will have a conversation here in about 25 minutes with Zach. I will brief him, Corey. And I think you said you&#x27;re free until 1 .30 today?
+Corey Blosser[36:13]
+ Correct, yeah.
+Tom Nowinski[36:14]
+ Okay. I will have Zach look at it. And if there&#x27;s anything new coming out of that conversation, then Zach can cycle on it after the conversation with you, Corey. But I am much better versed now in what you guys are, how do I say, considering navigating the token model. Token model certainly will work. In the token model, it does have a wider probability of being applicable to a lot of capabilities that the businesses may consider. But I hear your concern, Manjeet.
+Manjeet Singh[36:58]
+ We understand the value in it, but our challenge is explaining that value to eight different businesses and to our leadership, and then convincing them, and then getting an approval, and then also having that factor that there&#x27;s not enough governance on, or control on the amount of usage. That just puts us there with a little disadvantage. So as long as the gap between Sta and Wem is very low, I think we&#x27;ll probably have to choose Wem. And we may not be able to go towards tokens if that gap between these two is very less.
+Tom Nowinski[37:46]
+ And you&#x27;re reading my mind, because again, I now have a deeper appreciation of the governance of the AI tokens, and the unpredictability that it could, not probable, but it could introduce to the business, and nobody wants to turn around with a $25 ,000 bill.
+Manjeet Singh[38:5]
+ The leadership doesn&#x27;t want overages, right? They hate it. They hate to explain it to, like, they don&#x27;t want to talk about it. They want preferably a fixed limit budget so they can do their plannings, right?
+Tom Nowinski[38:23]
+ Yep, totally get it. And with the Wem add -on, you will have that predictability, right? You&#x27;ll have 2 ,149 users that now all have the speech and text analytics, and Pci compliance problem solved, provided Zach and Corey. We&#x27;ll have this conversation this afternoon, guys.
+Corey Blosser[38:47]
+ Oh, yeah.
+Tom Nowinski[38:47]
+ And we&#x27;ll take another crack at it. Cool.
+Corey Blosser[38:52]
+ I appreciate it, Tom, thank you.
+Tom Nowinski[38:54]
+ Yeah. No, no, thank you guys. Again, I really do appreciate the call -out, and we&#x27;ll shed some additional light on it.
+Corey Blosser[39:7]
+ Awesome. All right, well, I guess we&#x27;ll be talking to you later.
+Tom Nowinski[39:11]
+ Sounds good.
+Corey Blosser[39:13]
+ And I&#x27;ll give you an update, Manjit, after we have the meeting.
+Manjeet Singh[39:15]
+ Sure, sure, yeah, all right.
+Tom Nowinski[39:18]
+ Thanks, guys.
+Corey Blosser[39:19]
+ Bye, everyone.
+Manjeet Singh[39:19]
+ Thank you,</pre>
+      </details>
+    </section>
+
+    <div class="footer">
+      Prepared as a call-navigation artifact from the supplied transcript, assigned action items, and the detailed Genesys Cloud analysis already developed in this conversation.
+    </div>
+  </main>
+</div>
+</body>
+</html>
